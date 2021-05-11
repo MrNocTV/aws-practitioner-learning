@@ -1,0 +1,110 @@
+## Cloud
+- Cloud computing is the on-demand delivery of IT resources over the internet with pay-as-you-go pricing.
+
+## Amazon Elastic Compute Cloud (Amazon EC2)
+- Each EC2 instance type is grouped under an instance family
+- Instance types:
+    * General purpose instances:
+        provide a balance of compute, memory, and networking resources.
+        you can use them for a variety of workloads, such as:
+            ** application servers
+            ** gaming servers
+            ** code repos
+            ** small, medium databases
+            ** backend servers
+
+    * compute optimized instances:
+        ideal for compute-bound applications that benefit from high-performance processors. 
+            ** compute intensive task
+            ** gaming servers
+            ** high performance computing
+            ** scientific modeling
+
+
+    * memory optimized instances:
+        designed to deliver fast performance for workloads that process large datasets in memory.
+
+    * accelerated computing instances:
+        hardware accelerators, coprocessors, perfor some functions more efficiently than is possible in software running on CPUs. For example, floating-point number calculations, graphics processing, data pattern matching.
+        Ideal for graphics applications, game streaming, application streaming.
+
+    * storage optimized instances:
+        designed for workloads that require high, sequential read and write access to large datasets on local storage. For example, distributed file systems, data warehousing applications, high frequency online transaction processing (OLTP) systems.
+
+
+### Pricing
+- On-demand:
+    * ideal for short-term, irregular workloads that cannot be interrupted. 
+    * no upfront cost or minimum contracts apply
+    * you only pay for the compute time you use
+
+- EC2 Savings plans:
+    * Enable you to reduce your compute costs by committing to a consistent amount of compute usage for 1-year or 3-year term. Saving up to 72% over On-Demand costs.
+    * Any usage up to the commitment is charged at the discounted Savings Plan rate, any usage beyond the commitment is charged at regular on-demand rates.
+
+- Reserved instances:
+    * billing discount applied to the use of on-demand instances in your account.
+    * you can purchase Standard Reserved and Convertible Reserved instances for a 1-year or 3-year term, and Scheduled Reserved instances for 1-year term.
+    * at the end of Reserved instance term, you can continue using the Amazon EC2 instance without interruption with on-demand rates.
+
+- Spot instances:
+    * ideal for workloads with flexible start and end times, or that can withstand interruptions.
+    * Spot Instances use unused Amazon EC2 computing capacity and offer cost savings at up to 90% off of On-Demand prices.
+    * after you have launched a Spot Instance, if capacity is no longer available or demand for Spot Instances increases, your instance may be interrupted.
+    
+- Dedicated hosts:
+    * physical servers with Amazon EC2 instance capacity that is fully dedicated to your use.
+
+## Scalability and Elasticity
+- The AWS that provides this functionality for Amazon EC2 instances is Amazon EC2 Auto Scaling.
+- With Amazon EC2 Auto Scaling, you can use two approaches: dynamic scaling and predictive scaling.
+    * Dynamic scaling responds to changing demand
+    * Predictive scaling automatically schedules the right number of Amazon EC2 instances based on predicted demand.
+- There are three configurations when working with Auto Scaling group: minimum, desired and maximum capacity.
+- If you do not specify the desired number of Amazon EC2 instances in an Auto Scaling group, the desired capacity defaults to your minimum capacity.
+
+## Elastic Load Balancing
+- regional construct
+- automatically scalable
+
+## Messaging and queuing
+- Amazon Simple Queue Service (Amazon SQS)
+    * allow you to send, store, receive messages between software components at any volume
+    * payload: data contained within a message
+    * messages are placed until they're processed
+    * scale automatically
+
+
+- Amazon Simple Notification Service (Amazon SNS)
+    * similar to SQS, but it can also send out notification to end users.
+    * pub/sub model
+    * sns topic: a channel for messages to be delivered
+    * a subscriber can be a webserver, AWS lambda, webhook, etc.
+
+## Additional compute services
+- Serverless: you cannot see or access the underlying infrastructure.
+- The term “serverless” means that your code runs on servers, but you do not need to provision or manage these servers
+
+- AWS lambda: serverlet service, allows you to run code without needing to provision or manage servers.
+    * allow you to upload your code to Lambda Function
+    * configure a trigger, the service waits for the trigger
+    * when triggered, the lambda function is run automatically
+    * lambda is designed to run code < 15 minutes
+
+    * host short running functions
+    * service-oriented applications
+    * event driven applications
+    * no provisioning or managing servers
+
+Container orchestration tools
+- Amazon Elastic Container Service - ECS
+- Amazon Elastic Kubernetes Service - EKS
+- Container = Docker Container
+- Both ECS and EKS can run on top of EC2
+    * Run docker container-based workloads on AWS
+        ** Choose your orchestration tools, ECS or EKS
+        ** Choose your platform: run on EC2 or Fargate
+
+- AWS Fargate: serverless compute platform for containers, works with both ECS and EKS
+
+- The instances family determines the hardware you will be using.
