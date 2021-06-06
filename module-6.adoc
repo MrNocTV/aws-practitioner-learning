@@ -174,3 +174,23 @@ AWS Shield is a service that protects applications against DDoS attacks. AWS Shi
 - After you have enabled GuardDuty for your AWS account, GuardDuty begins monitoring your network and account activity. You do not have to deploy or manage any additional security software. GuardDuty then continuously analyzes data from multiple AWS sources, including VPC Flow Logs and DNS logs. 
 
 - If GuardDuty detects any threats, you can review detailed findings about them from the AWS Management Console. Findings include recommended steps for remediation. You can also configure AWS Lambda functions to take remediation steps automatically in response to GuardDuty’s security findings.
+
+## AWS Trusted Advisor
+
+- AWS Trusted Advisor is a web service that inspects your AWS environment and provides real-time recommendations in accordance with AWS best practices.
+
+Trusted Advisor compares its findings to AWS best practices in five categories: 
+    * cost optimization
+    * performance
+    * security
+    * fault tolerance
+    * service limits. 
+
+For the checks in each category, Trusted Advisor offers a list of recommended actions and additional resources to learn more about AWS best practices. 
+
+For each category:
+
+
+- The green check indicates the number of items for which it detected no problems.
+- The orange triangle represents the number of recommended investigations.
+- The red circle represents the number of recommended actions.

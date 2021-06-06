@@ -1,0 +1,5 @@
+- Amazon Augmented AI: provides built-in human review workflows for common machine learning use cases, such as content moderation and text extraction from documents. With Amazon A2I, you can also create your own workflows for machine learning models built on Amazon SageMaker or any other tools
+
+- Amazon Textract is a machine learning service that automatically extracts text and data from scanned documents
+
+- Amazon Lex is a service that enables you to build conversational interfaces using voice and text.

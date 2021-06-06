@@ -65,3 +65,5 @@ AWS CloudFormation provisions your resources in a safe, repeatable manner, enabl
 ## AWS Outspot
 
 - Run AWS services right in your data center.
+
+- AWS Outposts is a service that enables you to run infrastructure in a hybrid cloud approach.
