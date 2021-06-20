@@ -62,8 +62,11 @@ With AWS CloudFormation, you can treat your infrastructure as code. This means t
 
 AWS CloudFormation provisions your resources in a safe, repeatable manner, enabling you to frequently build your infrastructure and applications without having to perform manual actions. It determines the right operations to perform when managing your stack and rolls back changes automatically if it detects errors.
 
-## AWS Outspot
-
+## AWS Outposts
 - Run AWS services right in your data center.
-
 - AWS Outposts is a service that enables you to run infrastructure in a hybrid cloud approach.
+- AWS Outposts are server racks that placed inside your data center.
+
+## AWS WaveLength
+- Bring AWS Services to the edge of 5GB network
+- in the exam, WaveLength = 5GB network

@@ -122,10 +122,3 @@ You can choose from the following Support plans to meet your company’s needs:
 - For each listing in AWS Marketplace, you can access detailed information on pricing options, available support, and reviews from other AWS customers.
 
 - You can also explore software solutions by industry and use case. For example, suppose that your company is in the healthcare industry. In AWS Marketplace, you can review use cases that software helps you to address, such as implementing solutions to protect patient records or using machine learning models to analyze a patient’s medical history and predict possible health risks.
-
-
-- Review how much cost your predicted AWS usage will incur by the end of the month - You can perform this action in AWS Budgets.
-
-- Create an estimate for the cost of your use cases on AWS - You can perform this action in AWS Pricing Calculator.
-
-- Visualize and manage your AWS costs and usage over time - You can perform this action in AWS Cost Explorer.

@@ -50,6 +50,7 @@ AWS Snow Family is composed of
 - AWS Snowcone:
     * AWS Snowcone is a small, rugged, and secure edge computing and data transfer device. 
     * It features 2 CPUs, 4 GB of memory, and 8 TB of usable storage.
+    * can be sent back to AWS offline, or connect it to internet and use AWS DataSync to send data.
 - AWS Snowball:
     * Snowball Edge Storage Optimized devices are well suited for large-scale data migrations and recurring transfer workflows, in addition to local computing with higher capacity needs. 
     ** Storage: 80 TB of hard disk drive (HDD) capacity for block volumes and Amazon S3 compatible object storage, and 1 TB of SATA solid state drive (SSD) for block volumes. 
@@ -61,6 +62,7 @@ AWS Snow Family is composed of
         Compute: 40 vCPUs, and 80 GiB of memory to support Amazon EC2 sbe1 instances (equivalent to C5).
 - AWS Snowmobile
     * AWS Snowmobile is a service that is used for transferring up to 100 PB of data to AWS. Each Snowmobile is a 45-foot long shipping container that is pulled by a semi trailer truck.
+    * better than snowbal if you transfer more than 10PB.
     
 image::./images/aws-snow-family.png[]
 

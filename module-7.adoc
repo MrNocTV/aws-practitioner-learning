@@ -12,6 +12,8 @@ For example, suppose that your company’s developers use Amazon EC2 instances f
 
 In this scenario, you could create a CloudWatch alarm that automatically stops an Amazon EC2 instance when the CPU utilization percentage has remained below a certain threshold for a specified period. When configuring the alarm, you can specify to receive a notification whenever this alarm is triggered.
 
+example creating a billing alarm on the cloudwatch billing metric
+
 ## CloudWatch dashboard
 
 image::./images/cloudwatch_dashboard.png[]

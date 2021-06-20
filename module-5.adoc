@@ -22,6 +22,18 @@ Because EBS volumes are for data that needs to persist, it’s important to back
 
 - When you upload a file to Amazon S3, you can set permissions to control visibility and access to it. You can also use the Amazon S3 versioning feature to track changes to your objects over time.
 
+- S3 Secutity:
+    ** User based: IAM Policies
+    ** Resources based: bucket policies (cross account), object access control list, bucket access control list (less common)
+
+- S3 can host static websites and have them accessible on the www
+
+- S3 versioning: version your files in Amazon S3, it is enabled at the bucket level.
+
+- S3 access logs: log all access to S3 buckets.
+
+- S3 replication: CRR & SRR
+
 ### S3 Standard
 - Designed for frequently accessed data
 - Stores data in a minimum of three Availability Zones
@@ -37,18 +49,22 @@ Because EBS volumes are for data that needs to persist, it’s important to back
 
 ### S3 Intelligent-Tiering
 In the S3 Intelligent-Tiering storage class, Amazon S3 monitors objects’ access patterns. If you haven’t accessed an object for 30 consecutive days, Amazon S3 automatically moves it to the infrequent access tier, S3 Standard-IA. If you access an object in the infrequent access tier, Amazon S3 automatically moves it to the frequent access tier, S3 Standard.
+- cost-optimized by automatically moving objects between two access tiers based on changing access patterns.
 
 ### S3 Glacier
 - Low-cost storage designed for data archiving
 - Able to retrieve objects within a few minutes to hours
+    ** Expedited (1 - 5 mins)
+    ** standard (3 - 5 hrs)
+    ** bulk (5 - 12 hrs)
 
 ### S3 Glacier Deep Archive
 - Lowest-cost object storage class ideal for archiving
 - Able to retrieve objects within 12 hours
+    ** standard (12 hrs)
+    ** bulk (48 hrs)
 
 When deciding between Amazon S3 Glacier and Amazon S3 Glacier Deep Archive, consider how quickly you need to retrieve archived objects. You can retrieve objects stored in the S3 Glacier storage class within a few minutes to a few hours. By comparison, you can retrieve objects stored in the S3 Glacier Deep Archive storage class within 12 hours.
-
-
 
 ## Amazon Elastic File System (EFS)
 ### File storage
@@ -110,6 +126,13 @@ Consider Amazon Aurora if your workloads require high availability. It replicate
 
 Amazon Redshift is a data warehousing service that you can use for big data analytics. It offers the ability to collect data from many sources and helps you to understand relationships and trends across your data.
 
+- It's columnar (column based instead of row based like dynamoDB)
+
+- can be integrated with AWS QuickSight
+
+## AWS QuickSight
+- Serverless machine learning-powered business intelligence service to create interactive dashboards.
+
 ## AWS Database Migration Service (AWS DMS)
 
 AWS Database Migration Service (AWS DMS) enables you to migrate relational databases, nonrelational databases, and other types of data stores.
@@ -122,6 +145,12 @@ With AWS DMS, you move data between a source database and a target database. The
 
 - Continuous replication: Sending ongoing copies of your data to other target sources instead of doing a one-time migration
 
+## AWS glue: 
+- fully managed, serverless service
+- extract, transform, and load (ETL) service.
+- Glue Data Catalog: catalog of datasets, can be used by Athena, Redshift, EMR
+ 
+
 ## Additional database services
 - Amazon DocumentDB: Amazon DocumentDB is a document database service that supports MongoDB workloads. (MongoDB is a document database program.)
 
@@ -129,9 +158,10 @@ With AWS DMS, you move data between a source database and a target database. The
 
 * You can use Amazon Neptune to build and run applications that work with highly connected datasets, such as recommendation engines, fraud detection, and knowledge graphs.
 
-- Amazon Quantum Ledger Database (Amazon QLDB): You can use Amazon QLDB to review a complete history of all the changes that have been made to your application data.
+- Amazon Quantum Ledger Database (Amazon QLDB): You can use Amazon QLDB to review a complete history of all the changes that have been made to your application data. It's an immutable system: no entry can be removed or modified, cryptographically verifiable.
 
 - Amazon Managed Blockchain: is a service that you can use to create and manage blockchain networks with open-source frameworks. 
+- Blockchain makes it possible to build applications where multiple parties can execute transactions without the need for a trusted, central authority.
 
 * Blockchain is a distributed ledger system that lets multiple parties run transactions and share data without a central authority.
 
@@ -142,3 +172,4 @@ With AWS DMS, you move data between a source database and a target database. The
 - Amazon DynamoDB Accelerator (DAX) is an in-memory cache for DynamoDB. 
 
 * It helps improve response times from single-digit milliseconds to microseconds.
+

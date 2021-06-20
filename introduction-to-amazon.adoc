@@ -73,6 +73,7 @@
     * payload: data contained within a message
     * messages are placed until they're processed
     * scale automatically
+    * messages are deleted after they are read by consumers
 
 
 - Amazon Simple Notification Service (Amazon SNS)
