@@ -74,6 +74,7 @@ In file storage, multiple clients (such as users, applications, servers, and so 
 
 - Amazon Elastic File System (Amazon EFS) is a scalable file system used with AWS Cloud services and on-premises resources. As you add and remove files, Amazon EFS grows and shrinks automatically. It can scale on demand to petabytes without disrupting applications. 
 
+- You will pay a fee each time you read from or write data stored on the EFS - Infrequent Access storage class
 ### Comparing Amazon EBS and Amazon EFS
 .Comparing Amazon EBS and Amazon EFS
 |===
