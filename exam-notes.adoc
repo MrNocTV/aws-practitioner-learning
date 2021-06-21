@@ -123,6 +123,8 @@
 
 - S3 is a proprietary technology of AWS
 
+- Billing Alarms in CloudWatch: Intended a simple alarm (not as powerful as AWS Budgets)
+
 ## Services managed by AWS
 - For managed services such as Amazon Elastic MapReduce (Amazon EMR) and DynamoDB, AWS is responsible for performing all the operations needed to keep the service running.
 
@@ -373,3 +375,222 @@ image::./images/batch-vs-lambda.png[]
 
 image::./images/transit-gateway.png[]
 
+## AWS WAF
+- Deploy on Application Load Balancer, API Gateway, CloudFront
+
+## CloudHSM
+- AWS provisions encryption hardware. (Hardware security module)
+
+## AWS Certificate Manager
+- Let's you easily provision, manage and deploy SSL/TLS Certificates .
+
+## AWS Secrets Manager
+- newer service, meant for storing service
+
+## AWS Config Resource
+- View compliance of a resource over time.
+
+image::./images/config-resource.png[]
+
+## Amazon Macie
+- exam keyword: protect your data
+- fully managed data security and data privacy service that uses machine learning and pattern matching to discover and protect your sensitive data in AWS.
+
+image::./images/aws-macie.png[]
+
+## AWS Security Hub
+- Central security tool to manage security across several AWS accounts and automate security check.
+- for GuardDuty, Inspector, Macie, IAM Access Analyzer, etc
+- must first enable AWS Config service.
+
+image::./images/security-hub.png[]
+
+## Amazon Detective
+- GuardDuty, Macie and Security Hub are used to identify potential security issues or findings.
+
+- Amazon Detective analyzes, investigates, and quickly identifies the root cause of securities issues or suspicious activities.
+
+## Amazon Rekognition
+- Find objects, people, text, scenes in images and videos using ML
+
+## Amazon Transcribe
+- convert speech to text
+
+## Amazon Polly
+- text to speech
+
+## Amazon Translate
+- language translation
+
+## Amazon Lex & Connect
+- Lex: build chat bot, call center bot
+- Connect: virtual contact center
+
+image::./images/lex-and-connect.png[]
+
+## Amazon Comprehend
+• For Natural Language Processing – NLP
+• Fully managed and serverless service
+• Uses machine learning to find insights and relationships in text
+
+## Amazon Forecast
+• Fully managed service that uses ML to deliver highly accurate forecasts • Example: predict the future sales of a raincoat
+
+## Amazon Kendra
+- Fully managed document search service powered by Machine Learning
+- Extract answers from within a document (text, pdf, HTML, PowerPoint, MS Word, FAQs...)
+- Natural language search capabilities
+
+image::./images/kendra-1.png[]
+
+## Amazon Personalize
+- Fully managed ML-service to build apps with real-time personalized recommendations
+
+image::./images/personalize.png[]
+
+## AWS Control Tower
+- Easy way to setup and govern a secure and compliant multi-account AWS environment based on best practices.
+- AWS Control Tower runs on top of AWS Organizations (It automatically sets up AWS Organizations to organize accounts and implement SCPs (Service Control Policies)).
+
+## Saving plans
+- EC2 saving plans: up to 72%, commit to usage of individual instance families in a region.
+- Compute savings plan: up to 66% discount compared to On-Demand.
+
+## AWS Compute Optimizer
+- Reduce costs and improve performance by recommending optimal AWS resources for your workloads.
+
+## AWS Total cost of ownership (TCO) Calculator
+- AWS helps you reduceTotal Cost of Ownership (TCO) by reducing the need to invest in large capital expenditures and providing a pay-as-you- go model
+- TheTCO calculators allow you to estimate the cost savings when using AWS and provide a detailed set of reports that can be used in executive presentations.
+- Points of comparison:
+    ** Server costs
+    ** Storage costs
+    ** network costs
+    ** IT labor costs
+
+## Simple Monthly Calculator / Pricing Calculator
+- Simple Monthly Calculator is Deprecated since (June 30, 2020)
+- Estimate the cost for your AWS architect solution
+
+## AWS Billing dashboard
+
+## Cost allocation tags
+- Use cost allocation tags to track your AWS costs on a detailed level
+- AWS generated tags: Starts with Prefix aws:
+- User-defined tags
+
+image::./images/cost-allocation-tag.png[]
+
+## Cost and usage reports
+• Dive deeper into your AWS costs and usage
+• The AWS Cost & Usage Report contains the most comprehensive set of AWS cost and usage data available, including additional metadata about AWS services, pricing, and reservations (e.g., Amazon EC2 Reserved Instances (RIs)).
+
+image::./images/cost-and-usage-report.png[]
+
+## Cost explorer
+- Visualize, understand, and manage your AWS costs and usage over time
+- Create custom reports that analyze cost and usage data.
+- Forecast usage up to 12 months based on previous usage.
+
+image::./images/cost-explorer.png[]
+
+## AWS Budgets
+- Create budget and send alarms when costs exceeds the budget
+- 3 types of budgets: Usage, Cost, Reservation
+
+## Trusted Advisor
+- Analyze your AWS accounts and provides recommendation:
+    ** cost optimization
+    ** performance
+    ** security
+    ** service limit
+    ** fault tolerance
+- Programmatic Access using AWS Support API
+
+## Cloud support plan
+- AWS Basic Support Plan:
+    ** Customer Service & Communities
+    ** AWS Trusted Advisor
+    ** AWS Personal Health Dashboard 
+
+- AWS Developer support plan:
+    ** Business hours email access to Cloud Support Associates
+
+- AWS Business support plan:
+    ** 24x7 phone, email, and chat access to Cloud Support Engineers
+
+- AWS Enterprise Support Plan:
+    ** Access to a Technical Account Manager (TAM)
+    ** Concierge SupportTeam (for billing and account best practices)
+    ** Infrastructure Event Management,Well-Architected & Operations Reviews
+
+## AWS STS (Security Token Service)
+- Enables you to create temporary, limited- privileges credentials to access your AWS resources
+
+## Amazon Cognito
+- Identity for your Web and Mobile applications users
+- create a database of users for your mobile & web applications
+
+image::./images/amazon-cognito.png[]
+
+## AWS Directory Services
+- AWS Managed Microsoft AD
+- AD Connector
+- Simple AD
+
+image::./images/active-directory-service.png[]
+
+## AWS Single Sign-On (SSO)
+- Centrally manage Single Sign- On to access multiple accounts and 3rd-party business applications.
+- one login for multiple AWS accounts & applications
+
+## Directory Services:
+- integrate Microsoft Active Directory in AWS
+
+## Amazon WorkSpaces
+- Managed Desktop as a Service (DaaS) solution to easily provision Windows
+or Linux desktops
+- Great to eliminate management of on-premiseVDI (Virtual Desktop Infrastructure)
+
+image::./images/amazon-workspace.png[]
+
+## Amazon AppStream 2.0
+Desktop Application Streaming Service
+- Deliver to any computer, without acquiring, provisioning infrastructure 
+- The application is delivered from within a web browser
+
+## Amazon Sumerian
+• Create and run virtual reality (VR), augmented reality (AR), and 3D applications
+• Can be used to quickly create 3D models with animations
+
+## AWS IoT Core
+- AWS IoT Core allows you to easily connect IoT devices to the AWS Cloud
+- Serverless, secure & scalable to billions of devices and trillions of messages
+
+image::./images/iot-core.png[]
+
+## Amazon Elastic Transcoder
+- ElasticTranscoder is used to convert media files stored in S3 into media
+files in the formats required by consumer playback devices (phones etc..)   
+
+image::./images/elastic-transcoder.png[]
+
+## AWS Device Farm
+- Fully-managed service that tests your web and mobile apps against desktop browsers, real mobile devices, and tablets
+
+image::./images/device-farm.png[]
+
+## AWS Backup
+- Fully-managed service to centrally manage and automate backups across AWS services
+
+## CloudEndure Disaster Recovery
+- Quickly and easily recover your physical, virtual, and cloud-based servers into AWS
+- Continuous block-level replication for your servers
+
+image::./images/cloud-endure.png[]
+
+## AWS Professional Services & Partner Network
+• APN = AWS Partner Network
+• APNTechnology Partners: providing hardware,connectivity,and software
+• APN Consulting Partners: professional services firm to help build on AWS
+• APN Training Partners: find who can help you learn AWS
