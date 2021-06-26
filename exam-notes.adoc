@@ -125,14 +125,58 @@
 
 - Billing Alarms in CloudWatch: Intended a simple alarm (not as powerful as AWS Budgets)
 
+- Use AWS Organizations to manage AWS accounts of all units and then share the reserved EC2 instances amongst all units
+
+- Foundations are part of the Reliability pillar of the AWS Well-Architected Framework. AWS states that before architecting any system, foundational requirements that influence reliability should be in place. The services that are part of foundations are: Amazon VPC, AWS Trusted Advisor, AWS Service Quotas (earlier known as AWS Service Limits).
+
+AWS Trusted Advisor is an online tool that provides you real-time guidance to help you provision your resources following AWS best practices on cost optimization, security, fault tolerance, service limits, and performance improvement. Whether establishing new workflows, developing applications, or as part of ongoing improvement, recommendations provided by Trusted Advisor regularly help keep your solutions provisioned optimally.
+
+- U2F security key - Universal 2nd Factor (U2F) Security Key is a device that you can plug into a USB port on your computer. 
+
+- The AWS account must be able to operate as a standalone account. Only then it can be removed from AWS organizations
+
+- AWS Services support reserved instance: EC2, DynamoDB, ElasticCache, RDS, Redshift,
+
+- you can create an CloudWatch alarm that sends an email message using Amazon SNS when the alarm changes state from OK to ALARM
+
+- The services that are part of foundations are: Amazon VPC, AWS Trusted Advisor, AWS Service Quotas
+
+- reserved instances can save up to 72% compared to on-demand prices.
+
+- read replica cannot enhance database availability.
+
+- glacier and storage gateway data are encrypted by default.
+
+- AWS Shield Advanced provides expanded DDoS attack protection for web applications running on the following resources: Amazon Elastic Compute Cloud, Elastic Load Balancing (ELB), Amazon CloudFront, Amazon Route 53, AWS Global Accelerator.
+
+- Reserved pricing: RDS, EC2
+
+- You can use Read Replicas for both improved read performance as well as Disaster Recovery
+
+- S3 standard and s3 intelligent tiering do not charge any retrieval fee.
+
+- performance efficiencey: right resource types and sizes.
+
+## Credential Reports
+
+You can generate and download a credential report that lists all users in your account and the status of their various credentials, including passwords, access keys, and MFA devices.
+
+## Service Quotas 
+enables you to view and manage your quotas for AWS services from a central location. Quotas, also referred to as limits in AWS, are the maximum values for the resources, actions, and items in your AWS account. Each AWS service defines its quotas and establishes default values for those quotas.
+
+## AWS Step Function 
+- lets you coordinate multiple AWS services into serverless workflows. You can design and run workflows that stitch together services such as AWS Lambda, AWS Glue and Amazon SageMaker.
+
 ## Services managed by AWS
 - For managed services such as Amazon Elastic MapReduce (Amazon EMR) and DynamoDB, AWS is responsible for performing all the operations needed to keep the service running.
 
-- Amazon EMR launches clusters in minutes. You don’t need to worry about node provisioning, infrastructure setup, Hadoop configuration, or cluster tuning. Amazon EMR takes care of these tasks so you can focus on analysis.
+- Amazon EMR launches clusters in minutes. You don’t need to worry about node provisioning, infrastructure setup, Hadoop configuration, or cluster tuning. Amazon EMR takes care of these tasks so you can focus on analysis.  EMR is not a serverless service.
 
 - DynamoDB is serverless with no servers to provision, patch, or manage and no software to install, maintain, or operate. DynamoDB automatically scales tables up and down to adjust for capacity and maintain performance. Availability and fault tolerance are built in, eliminating the need to architect your applications for these capabilities.
 
 - Other managed services include: AWS Lambda, Amazon RDS, Amazon Redshift, Amazon CloudFront, and several other services.
+
+- Per AWS pricing, data transfer between S3 and EC2 instances within the same region is not charged,
 
 ## The AWS managed services
 - AMS is an AWS service that operates AWS on behalf of enterprise customers and partners. Enterprises want to adopt AWS at scale but often the skills that have served them well in traditional IT do not always translate to success in the cloud. AWS Managed Services (AMS) enables them to migrate to AWS at scale more quickly, reduce their operating costs, improve security and compliance and focus on their differentiating business priorities.
@@ -195,6 +239,7 @@ Examples include:
 
 ## Amazon Machine Image (AMI) 
 - is a template that contains a software configuration (for example, an operating system, an application server, and applications). This pre-configured template save time and avoid errors when configuring settings to create new instances. You specify an AMI when you launch an instance, and you can launch as many instances from the AMI as you need. You can also launch instances from as many different AMIs as you need.
+- The AMI must be in the same region as that of the EC2 instance to be launched. If the AMI exists in a different region, you can copy that AMI to the region where you want to launch the EC2 instance. The region of AMI has no bearing on the performance of the EC2 instance.
 
 ## Amazon EMR (Elastic mapreduce)
 - helps you analyze and process vast amounts of data by distributing the computational work across a cluster of virtual servers running in the AWS Cloud. The cluster is managed using an open-source framework called Hadoop. Amazon EMR lets you focus on crunching or analyzing your data without having to worry about time-consuming setup, management, and tuning of Hadoop clusters or the compute capacity they rely on.
@@ -318,6 +363,7 @@ image::./images/batch-vs-lambda.png[]
     ** patching automation for enhanced compliance
     ** run commands across an entire fleet of servers.
 - we need to install the SSM agent onto the systems we control
+- centralize operational data from multiple AWS services and automate tasks across your AWS resources
 
 ## AWS OpsWorks
 - Chef && Puppet help you perform server configuration automatically
@@ -335,6 +381,7 @@ image::./images/batch-vs-lambda.png[]
 - get log from multiple sources: Elastic Beanstalk, EC2, ECS, 
 - by default, no logs from your EC2 instance will go to CloudWatch, you need to run CloudWatch agent on EC2 to push the log files you want.
 - The CloudWatch agent can be setup on-premises too
+- You can use Amazon CloudWatch Logs to monitor, store, and access your log files from Amazon Elastic Compute Cloud (Amazon EC2) instances, AWS CloudTrail, Route 53, and other sources such as on-premises servers.
 
 ## Amazon CloudWatch Events / EventBridge
 - EventBridge is the next evolution of CloudWatch Events
@@ -365,9 +412,11 @@ image::./images/batch-vs-lambda.png[]
 - NAT Gateways & NAT Instances allow your instances in your Private Subnets to access the internet while remaining private
 - VPC Flow Logs: network logs, help to monitor & troubleshoot connectivity issues.
 - VPC Peering: connect two VPC, privately using AWS's network (make them behave as if they were in the same network)
+- A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. Instances in either VPC can communicate with each other as if they are within the same network
 - VPC Endpoints allow you to connect to AWS services using a private network instead of public www network.
     ** VPC Endpoint Gateway: S3 & DynamoDB
     ** VPC Endpoint interface: the rest
+- 
 
 ## Transit Gateway
 - Network topology can be very complicated, 
@@ -478,6 +527,12 @@ image::./images/personalize.png[]
 - Use cost allocation tags to track your AWS costs on a detailed level
 - AWS generated tags: Starts with Prefix aws:
 - User-defined tags
+<<<<<<< HEAD
+=======
+- you must activate both AWS generated tags and user-defined tags separately
+before they can appear in Cost Explorer or on a cost allocation report
+- for each resource, each tag key must be unique and each tag key can have only one value.
+>>>>>>> 7f899c2aff16c73995da0a7339f85e456a3c6c6e
 
 image::./images/cost-allocation-tag.png[]
 
@@ -497,6 +552,10 @@ image::./images/cost-explorer.png[]
 ## AWS Budgets
 - Create budget and send alarms when costs exceeds the budget
 - 3 types of budgets: Usage, Cost, Reservation
+<<<<<<< HEAD
+=======
+- You can also use AWS Budgets to set reservation utilization or coverage targets and receive alerts when your utilization drops below the threshold you define. Reservation alerts are supported for Amazon EC2, Amazon RDS, Amazon Redshift, Amazon ElastiCache, and Amazon Elasticsearch reservations.
+>>>>>>> 7f899c2aff16c73995da0a7339f85e456a3c6c6e
 
 ## Trusted Advisor
 - Analyze your AWS accounts and provides recommendation:
@@ -518,6 +577,10 @@ image::./images/cost-explorer.png[]
 
 - AWS Business support plan:
     ** 24x7 phone, email, and chat access to Cloud Support Engineers
+<<<<<<< HEAD
+=======
+    ** provides architecture guidance contextual to your specific use-cases.
+>>>>>>> 7f899c2aff16c73995da0a7339f85e456a3c6c6e
 
 - AWS Enterprise Support Plan:
     ** Access to a Technical Account Manager (TAM)
@@ -568,7 +631,11 @@ Desktop Application Streaming Service
 - Serverless, secure & scalable to billions of devices and trillions of messages
 
 image::./images/iot-core.png[]
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 7f899c2aff16c73995da0a7339f85e456a3c6c6e
 ## Amazon Elastic Transcoder
 - ElasticTranscoder is used to convert media files stored in S3 into media
 files in the formats required by consumer playback devices (phones etc..)   
@@ -591,6 +658,36 @@ image::./images/cloud-endure.png[]
 
 ## AWS Professional Services & Partner Network
 • APN = AWS Partner Network
-• APNTechnology Partners: providing hardware,connectivity,and software
+• APN Technology Partners: providing hardware,connectivity,and software
 • APN Consulting Partners: professional services firm to help build on AWS
 • APN Training Partners: find who can help you learn AWS
+
+## AWS Acceptable Use Policy
+
+- The Acceptable Use Policy describes prohibited uses of the web services offered by Amazon Web Services, Inc. and its affiliates (the “Services”) and the website located at http://aws.amazon.com (the “AWS Site”). This policy is present at https://aws.amazon.com/aup/ and is updated on a need basis by AWS.
+
+## AWS Trusted Advisor
+
+AWS Trusted Advisor is an online tool that provides real-time guidance to help provision your resources following AWS best practices. Whether establishing new workflows, developing applications, or as part of ongoing improvement, recommendations provided by Trusted Advisor regularly help keep your solutions provisioned optimally. AWS Trusted Advisor analyzes your AWS environment and provides best practice recommendations in five categories: Cost Optimization, Performance, Security, Fault Tolerance, Service Limits.
+
+AWS Trusted Advisor checks the Amazon Elastic Compute Cloud (Amazon EC2) instances that were running at any time during the last 14 days and alerts you if the daily CPU utilization was 10% or less and network I/O was 5 MB or less on 4 or more days.
+
+How Trusted Advisor Works:  via - https://aws.amazon.com/premiumsupport/technology/trusted-advisor/
+
+How AWS Trusted Advisor identifies low utilization Amazon EC2 instances:  via - https://aws.amazon.com/premiumsupport/technology/trusted-advisor/best-practice-checklist/#Cost_Optimization
+
+## AWS Cost Explorer
+
+AWS Cost Explorer has an easy-to-use interface that lets you visualize, understand, and manage your AWS costs and usage over time. AWS Cost Explorer includes a default report that helps you visualize the costs and usage associated with your top five cost-accruing AWS services, and gives you a detailed breakdown of all services in the table view. The reports let you adjust the time range to view historical data going back up to twelve months to gain an understanding of your cost trends.
+
+The rightsizing recommendations feature in Cost Explorer helps you identify cost-saving opportunities by downsizing or terminating EC2 instances. You can see all of your underutilized EC2 instances across member accounts in a single view to immediately identify how much you can save.
+
+## Virtual MFA device
+
+A software app that runs on a phone or other device and emulates a physical device. The device generates a six-digit numeric code based upon a time-synchronized one-time password algorithm. The user must type a valid code from the device on a second webpage during sign-in. Each virtual MFA device assigned to a user must be unique. A user cannot type a code from another user's virtual MFA device to authenticate.
+
+Google Authenticator is an example of a Virtual MFA device:
+
+## AWS Service Catalog 
+
+AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS. These IT services can include everything from virtual machine images, servers, software, and databases to complete multi-tier application architectures.
