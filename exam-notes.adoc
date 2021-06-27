@@ -157,6 +157,14 @@ AWS Trusted Advisor is an online tool that provides you real-time guidance to he
 
 - performance efficiencey: right resource types and sizes.
 
+- Best practice guidance - Customers with a Developer, Business or Enterprise support plan have access to best practice guidance.
+
+- You can use AWS CodeStar and AWS Cloud9 to develop, build, and deploy a serverless web application 
+
+- Both Basic and Developer support plans have access to 7 core Trusted Advisor checks.
+
+- Don't share security credentials between accounts, use IAM roles instead.
+
 ## Credential Reports
 
 You can generate and download a credential report that lists all users in your account and the status of their various credentials, including passwords, access keys, and MFA devices.
@@ -500,6 +508,7 @@ image::./images/personalize.png[]
 ## AWS Control Tower
 - Easy way to setup and govern a secure and compliant multi-account AWS environment based on best practices.
 - AWS Control Tower runs on top of AWS Organizations (It automatically sets up AWS Organizations to organize accounts and implement SCPs (Service Control Policies)).
+- Control Tower is an AWS native service providing a pre-defined set of blueprints and guardrails to help customers implement a landing zone for new AWS accounts.
 
 ## Saving plans
 - EC2 saving plans: up to 72%, commit to usage of individual instance families in a region.
@@ -678,3 +687,7 @@ Google Authenticator is an example of a Virtual MFA device:
 ## AWS Service Catalog 
 
 AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS. These IT services can include everything from virtual machine images, servers, software, and databases to complete multi-tier application architectures.
+
+## AWS Resource groups
+
+You can use Resource Groups to organize your AWS resources. Resource groups make it easier to manage and automate tasks on large numbers of resources at a time.
