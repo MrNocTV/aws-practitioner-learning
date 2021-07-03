@@ -165,6 +165,16 @@ AWS Trusted Advisor is an online tool that provides you real-time guidance to he
 
 - Don't share security credentials between accounts, use IAM roles instead.
 
+- Operational Excellent: 
+    ** Anticipate failure
+    ** Make frequent, small, reversible changes.
+
+- Performance efficiency:
+    ** Use serverless architecture
+    ** experiment more often
+
+
+
 ## Credential Reports
 
 You can generate and download a credential report that lists all users in your account and the status of their various credentials, including passwords, access keys, and MFA devices.
@@ -187,7 +197,7 @@ enables you to view and manage your quotas for AWS services from a central locat
 - Per AWS pricing, data transfer between S3 and EC2 instances within the same region is not charged,
 
 ## The AWS managed services
-- AMS is an AWS service that operates AWS on behalf of enterprise customers and partners. Enterprises want to adopt AWS at scale but often the skills that have served them well in traditional IT do not always translate to success in the cloud. AWS Managed Services (AMS) enables them to migrate to AWS at scale more quickly, reduce their operating costs, improve security and compliance and focus on their differentiating business priorities.
+- is an AWS service that operates AWS on behalf of enterprise customers and partners. Enterprises want to adopt AWS at scale but often the skills that have served them well in traditional IT do not always translate to success in the cloud. AWS Managed Services (AMS) enables them to migrate to AWS at scale more quickly, reduce their operating costs, improve security and compliance and focus on their differentiating business priorities.
 
 ## Amazon Elastic Container Registry (ECR) 
 - is a Docker container registry that allows developers to store, manage, and deploy Docker container images.
@@ -400,11 +410,11 @@ image::./images/batch-vs-lambda.png[]
 - CloudTrail events are stored for 90 days
 - To keep events beyond this period, log them to S3 and use Athena.
 - There are 3 types of event:
-    ** Management events
+    ** Management events (turned on by default)
     ** data events
     ** insight events
 
-## Anazon CodeGuru
+## Amazon CodeGuru
 - ML-powered service for automated code reviews and application performance recommendations
     ** CodeGuru Reviewer: automated code reviews for static code analysis
     ** CodeGuru Profiler: visibility/recommendations about application performance during runtime.
